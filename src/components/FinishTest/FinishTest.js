@@ -14,15 +14,14 @@ const FinishTest = (props) => {
 
                     return (
                         <li key={index}>
-                            <strong> {index + 1} </strong>. &nbsp;
-                            {quizItem.text}
+                            <p><strong> {index + 1}. </strong> &nbsp; {quizItem.text}</p>
                             <i className={cls.join(' ')}/>
                         </li>
                     )
                 })}
             </ul>
 
-            <button onClick={props.onTrymore}>Try more</button>
+            <button onClick={props.onTrymore}>Retry</button>
         </div>
     )
 };
