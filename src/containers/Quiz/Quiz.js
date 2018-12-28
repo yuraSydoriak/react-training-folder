@@ -10,8 +10,8 @@ class Quiz extends Component{
         quiz: [
             {
                 id : 1,
-                text: '@ First question',
-                correctAnswer: 1,
+                text: 'First question (correct answer 4)',
+                correctAnswer: 4,
                 answers: [
                     { id : 1, text: 'Answer 1'},
                     { id : 2, text: 'Answer 2'},
@@ -21,7 +21,7 @@ class Quiz extends Component{
             },
             {
                 id : 2,
-                text: '@@ Second question',
+                text: 'Second question (correct answer 2)',
                 correctAnswer: 2,
                 answers: [
                     { id : 1, text: 'Answer 1'},
@@ -32,7 +32,7 @@ class Quiz extends Component{
             },
             {
                 id : 3,
-                text: '@@@ Third question',
+                text: 'Third question (correct answer 3)',
                 correctAnswer: 3,
                 answers: [
                     { id : 1, text: 'Answer 1'},
@@ -44,6 +44,19 @@ class Quiz extends Component{
         ]
     };
 
+    onAnswerClickHandler = (answerId) => {
+        const correctAnswer = this.state.quiz[this.state.currentQuestion].correctAnswer;
+
+        if (answerId === correctAnswer){
+            this.setState({
+                currentQuestion: this.state.currentQuestion + 1
+            })
+
+        } else {
+            console.log(false);
+        }
+    }
+
     render(){
         return(
             <div className={'Quiz'}>
@@ -52,7 +65,8 @@ class Quiz extends Component{
                     <ActiveQuiz
                         question = {this.state.quiz[this.state.currentQuestion]}
                         questionsLength = {this.state.quiz.length}
-                        currentQuestion = {this.state.currentQuestion + 1}
+                        questionNumber = {this.state.currentQuestion + 1}
+                        onAnswerClick = {this.onAnswerClickHandler}
                     />
                 </div>
             </div>
