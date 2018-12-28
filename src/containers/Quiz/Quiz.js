@@ -1,12 +1,14 @@
-import React, {Component} from 'react'
-import './Quiz.css'
+import React, {Component} from 'react';
+import './Quiz.css';
 import ActiveQuiz from "../../components/ActiveQuiz/ActiveQuiz";
+import FinishTest from "../../components/FinishTest/FinishTest";
 
 
 class Quiz extends Component{
 
     state = {
         currentQuestion: 0,
+        quizFinished: false,
         quiz: [
             {
                 id : 1,
@@ -48,26 +50,50 @@ class Quiz extends Component{
         const correctAnswer = this.state.quiz[this.state.currentQuestion].correctAnswer;
 
         if (answerId === correctAnswer){
-            this.setState({
-                currentQuestion: this.state.currentQuestion + 1
-            })
+
+            const activeQuestion = this.state.currentQuestion + 1;
+            const questionLength = this.state.quiz.length;
+
+            if(activeQuestion === questionLength) {
+                this.setState({
+                    quizFinished: true
+                })
+            } else {
+                this.setState({
+                    currentQuestion: this.state.currentQuestion + 1
+                })
+            }
 
         } else {
             console.log(false);
         }
+
+    }
+
+    tryOneMoreTimeHandler = () => {
+        this.setState({
+            currentQuestion: 0,
+            quizFinished: false,
+        })
     }
 
     render(){
         return(
             <div className={'Quiz'}>
                 <div className={'QuizWrapper'}>
-                    <h1>Try to answer the questions:</h1>
-                    <ActiveQuiz
-                        question = {this.state.quiz[this.state.currentQuestion]}
-                        questionsLength = {this.state.quiz.length}
-                        questionNumber = {this.state.currentQuestion + 1}
-                        onAnswerClick = {this.onAnswerClickHandler}
-                    />
+                    {   this.state.quizFinished
+                        ?
+                        <FinishTest
+                            onTrymore = {this.tryOneMoreTimeHandler}
+                        />
+                        :
+                        <ActiveQuiz
+                            question = {this.state.quiz[this.state.currentQuestion]}
+                            questionsLength = {this.state.quiz.length}
+                            questionNumber = {this.state.currentQuestion + 1}
+                            onAnswerClick = {this.onAnswerClickHandler}
+                        />
+                    }
                 </div>
             </div>
         )
