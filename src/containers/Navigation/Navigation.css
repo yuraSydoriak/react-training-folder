@@ -1,0 +1,17 @@
+.Navigation {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 80%;
+    max-width: 300px;
+    padding: 20px 10px;
+    box-sizing: border-box;
+    transform: translateX(0px);
+    transition: transform .22s ease-in;
+    background: #fff;
+    z-index: 100;
+}
+.Navigation.close {
+    transform: translateX(-300px);
+}

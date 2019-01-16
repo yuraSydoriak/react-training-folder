@@ -1,5 +1,7 @@
 import React from 'react';
 import './FinishTest.css';
+import Button from "../UI/Button/Button";
+
 
 const FinishTest = (props) => {
     return (
@@ -21,7 +23,7 @@ const FinishTest = (props) => {
                 })}
             </ul>
 
-            <button onClick={props.onTrymore}>Retry</button>
+            <Button onClick={props.onTrymore} type='primary'>Retry</Button>
         </div>
     )
 };

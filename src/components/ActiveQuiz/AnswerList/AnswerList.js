@@ -3,7 +3,6 @@ import './AnswerList.css'
 import AnswerItem from "./AnswerItem/AnswerItem";
 
 const AnswerList = (props) => {
-    console.log(props);
     return (
         <ul className={'AnswerList'}>
             {props.answers.map((answer, index) => {
