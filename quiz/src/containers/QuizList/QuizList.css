@@ -1,0 +1,12 @@
+.QuizList {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    width: 100%;
+    flex-grow: 1;
+    background: -webkit-linear-gradient(90deg, #41b293 0%, #6ee669 100%);
+    background: linear-gradient(90deg, #41b293 0%, #6ee669 100%);
+}
+.QuizList h1 {
+    color: #fff;
+}

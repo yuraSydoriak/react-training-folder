@@ -7,7 +7,11 @@ const NavigationItems = (props) => {
         <ul>
             {props.links.map( (link, index) => {
                 return (
-                    <NavigationItem link={link} key={index}/>
+                    <NavigationItem
+                        key={index}
+                        link={link}
+                        onLinkClick={props.onLinkClick}
+                    />
                 )
             })}
         </ul>

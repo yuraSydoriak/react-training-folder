@@ -9,9 +9,10 @@ class Navigation extends Component {
     state = {
         menu: false,
         links: [
-            'One',
-            'Two',
-            'Three'
+            {label: 'Home', to: '/', exact: true},
+            {label: 'Authorization', to: '/auth', exact: false},
+            {label: 'Quiz List', to: '/quiz-list', exact: false},
+            {label: 'Create Quiz', to: '/create-quiz', exact: false}
         ]
     };
 
@@ -25,6 +26,10 @@ class Navigation extends Component {
         this.setState({
             menu: false
         })
+    };
+
+    clickLinkHandler = () => {
+        this.closeBackdropHandler();
     }
 
     render() {
@@ -38,7 +43,10 @@ class Navigation extends Component {
             <React.Fragment>
                 <OpenCloseNavButton onClick={this.toggleMenuHandler} isOpen={this.state.menu}/>
                 <nav className={cls.join(' ')}>
-                    <NavigationItems links={this.state.links}/>
+                    <NavigationItems
+                        links={this.state.links}
+                        onLinkClick={this.clickLinkHandler}
+                    />
                 </nav>
                 {this.state.menu ? <Backdrop onClick={this.closeBackdropHandler}/> : null}
             </React.Fragment>

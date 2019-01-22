@@ -1,0 +1,8 @@
+.QuizCreator {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    width: 100%;
+    flex-grow: 1;
+    background: linear-gradient(90deg, #de9e2a 0%, #dff352 100%);
+}

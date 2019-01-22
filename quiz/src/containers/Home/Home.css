@@ -1,0 +1,13 @@
+.Home {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    width: 100%;
+    flex-grow: 1;
+    background: -webkit-linear-gradient(90deg, #10a6b5 0%, #697ce6 100%);
+    background: linear-gradient(90deg, #10a6b5 0%, #697ce6 100%);
+}
+.Home .description {
+    color: #fff;
+    font-size: 18px;
+}
