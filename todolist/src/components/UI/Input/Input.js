@@ -7,6 +7,7 @@ const Input = props => {
             className={props.className || 'default'}
             type={props.type || 'text'}
             placeholder={props.placeholder || 'Type here...'}
+            value={props.value}
             onChange={props.onChange}
         />
     );

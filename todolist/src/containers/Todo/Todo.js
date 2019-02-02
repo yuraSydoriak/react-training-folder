@@ -48,12 +48,15 @@ class Todo extends Component{
     addNewTodoItemHandler = () => {
         const NewItemID = this.state.todoData.length + 1;
         const NewItemText = this.state.label;
-        const NewTodoItem = {id: NewItemID, done: false, priority: false, text: NewItemText};
-        const TodoData = [...this.state.todoData];
-        TodoData.push(NewTodoItem);
-        this.setState({
-            todoData: TodoData
-        });
+
+        if (NewItemText !== '') {
+            const NewTodoItem = {id: NewItemID, done: false, priority: false, text: NewItemText};
+            const TodoData = [...this.state.todoData];
+            TodoData.push(NewTodoItem);
+            this.setState({
+                todoData: TodoData
+            });
+        }
     };
 
     onTypeHandler = (event) => {
@@ -97,6 +100,7 @@ class Todo extends Component{
                         addNewTodoItem={this.addNewTodoItemHandler}
                         onType={this.onTypeHandler}
                         SubmitFormForAddItem={this.SubmitFormForAddItemHandler}
+                        value={this.state.label}
                     />
                 </div>
             </div>

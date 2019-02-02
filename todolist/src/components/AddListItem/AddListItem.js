@@ -10,6 +10,7 @@ const AddListItem =  props => {
                    type="text"
                    placeholder="Add ToDo Item..."
                    onChange={props.onType}
+                   value={props.value}
             />
             <Button
                 onClick={props.SubmitFormForAddItem}
