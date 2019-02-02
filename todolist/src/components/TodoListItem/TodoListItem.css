@@ -1,0 +1,30 @@
+.TodoListItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0 5px 0;
+}
+.TodoListItem .buttonsWrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+}
+.TodoListItem span {
+
+}
+.TodoListItem span:hover {
+    cursor: pointer;
+}
+
+.ListItemLabel {
+
+}
+.ListItemLabel.done {
+    text-decoration: line-through;
+}
+
+.ListItemLabel.priority {
+    font-weight: 900;
+    color: #b22c14;
+    font-size: 1.1em;
+}

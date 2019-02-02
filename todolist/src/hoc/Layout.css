@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css?family=Dosis");
+
+body {
+    font-family: "Dosis", sans-serif;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.Layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.Layout main{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}

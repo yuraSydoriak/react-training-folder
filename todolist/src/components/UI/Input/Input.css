@@ -1,0 +1,27 @@
+.default {
+    display: block;
+    margin: 0;
+    padding: 10px 5px;
+    color: inherit;
+    width: 100%;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: inherit;
+    line-height: 14px;
+    border: none;
+    border-radius: 3px;
+    transition: box-shadow 300ms;
+}
+.default.mediumWidth {
+    width: 70%;
+}
+.default.smallWidth {
+    width: 50%;
+}
+.default.extraSmallWidth {
+    width: 25%;
+}
+.default:focus {
+    outline: none;
+    box-shadow: 4px 4px 15px #31656d;
+}
